@@ -1,0 +1,31 @@
+export class Persona {
+  $key: string;
+    apellido: string;
+    casa: string;
+    cedula: string;
+    codigo: string;
+    dis_auditiva: string;
+    dis_fisica: string;
+    dis_intelectual: string;
+    dis_lenguaje: string;
+    dis_mental : string;
+    dis_visual : string;
+    edad: string;
+    enf_artritis : string;
+    enf_artrosis : string;
+    enf_tendinitis : string;
+    etnia : string;
+    genero : string;
+    nombre : string;
+    observacion : string;
+    sector_vivienda: string;
+    serv_celular: string;
+    serv_computadora : string;
+    serv_convencional : string;
+    serv_electricidad : string;
+    serv_internet: string;
+    serv_telefono: string;
+    tivo_vivienda : string;
+    via_acceso: string;
+    vive_persona: string;
+}

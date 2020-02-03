@@ -1,0 +1,161 @@
+<form (ngSubmit)="save()" [formGroup]="form">
+
+  <div fxLayout="row" fxLayoutAlign="start center" mat-dialog-title>
+    <h2 *ngIf="form.get('nombre').value" class="headline m-0" fxFlex="auto">
+      <ic-icon [icon]="icAssignment" class="ltr:mr-1 rtl:ml-1 text-secondary" fxFlex="none" size="24px"></ic-icon>
+      ACTUALIZAR </h2>
+    <h2 *ngIf="!form.get('nombre').value" class="headline m-0" fxFlex="auto">
+      <ic-icon [icon]="icAssignment" class="ltr:mr-1 rtl:ml-1 text-secondary" fxFlex="none" size="24px"></ic-icon>
+      NUEVO </h2>
+
+    <button  cdkFocusInitial class="text-secondary" mat-dialog-close mat-icon-button type="button">
+      <mat-icon [icIcon]="icClose"></mat-icon>
+    </button>
+  </div>
+    <mat-divider class="-mx-6 mt-6"></mat-divider>
+
+  <mat-dialog-content class="pb-6 content">
+    <div class="pb-4" fxLayout="row" fxLayout.lt-md="column" fxLayout.lt-sm="column" fxLayoutGap="24px">
+      <div  fxFlex="auto" fxLayout="column">
+        <h2 class="body-2 font-medium m-0 mt-6 text-secondary" fxLayout="row" fxLayoutAlign="start center">
+          <ic-icon [icon]="icDescription" class="ltr:mr-4 rtl:ml-4" fxFlex="none" size="24px"></ic-icon>
+          <span>DATOS GENERALES</span>
+        </h2>
+        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+          <mat-form-field class="mt-6" fxFlex="auto">
+            <mat-label>Nombres</mat-label>
+            <input cdkFocusInitial formControlName="nombre" matInput>
+            <mat-icon [icIcon]="icPerson" class="mr-3" matPrefix></mat-icon>
+          </mat-form-field>
+          <mat-form-field class="mt-6" fxFlex="auto">
+            <mat-label>Apellidos</mat-label>
+            <input cdkFocusInitial formControlName="apellido" matInput>
+            <mat-icon [icIcon]="icPerson" class="mr-3" matPrefix></mat-icon>
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+          <mat-form-field class="mt-6" fxFlex="auto">
+            <mat-label>Edad</mat-label>
+            <input cdkFocusInitial formControlName="edad" matInput>
+
+            <mat-icon [icIcon]="icPerson" class="mr-3" matPrefix></mat-icon>
+          </mat-form-field>
+          <mat-form-field class="mt-6" fxFlex="auto">
+            <mat-label>Cédula</mat-label>
+            <input cdkFocusInitial formControlName="cedula" matInput maxlength="10" required>
+            <mat-hint align="start">Ingrese no más de 10 caracteres</mat-hint>
+            <mat-icon [icIcon]="icPerson" class="mr-3" matPrefix></mat-icon>
+          </mat-form-field>
+        </div>
+        <h2 class="body-2 font-medium m-0 mt-6 text-secondary" fxLayout="row" fxLayoutAlign="start center">
+          <ic-icon [icon]="icDescription" class="ltr:mr-4 rtl:ml-4" fxFlex="none" size="24px"></ic-icon>
+          <span>Servicios</span>
+        </h2>
+        <div fxLayout="row  "  class="tama" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+          <mat-checkbox class="lg:mt-3 md:mt-3 sm:pb-10"  color="primary" [checked]="false" formControlName="serv_celular">Teléfono Celular</mat-checkbox>
+          <mat-checkbox class="lg:mt-3 md:mt-3 sm:pb-10" color="primary" [checked]="false" formControlName="serv_celular">Teléfono convencional</mat-checkbox>
+          <mat-checkbox class="lg:mt-3 md:mt-3 sm-pb-10" color="primary" [checked]="false" formControlName="serv_computadora">Computadora</mat-checkbox>
+        </div>
+        <div fxLayout="row"   class="tama" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+          <mat-checkbox class="lg:mt-3 md:mt-3 sm:pb-10 pb:0" color="primary" [checked]="false" formControlName="serv_internet">Internet</mat-checkbox>
+          <mat-checkbox class="lg:mt-3 md:mt-3 sm:pb-10  pb:0" color="primary" [checked]="false" formControlName="serv_electricidad">Energía eléctrica</mat-checkbox>
+        </div>
+        <h2 class="body-2 font-medium m-0 mt-6 text-secondary" fxLayout="row" fxLayoutAlign="start center">
+          <ic-icon [icon]="icDescription" class="ltr:mr-4 rtl:ml-4" fxFlex="none" size="24px"></ic-icon>
+          <span>Enfermedad</span>
+        </h2>
+        <div fxLayout="row  "  class="tama" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+          <mat-checkbox class="lg:mt-3 md:mt-3 sm:pb-10"  color="primary" [checked]="false" formControlName="enf_artritis">Artritis</mat-checkbox>
+          <mat-checkbox class="lg:mt-3 md:mt-3 sm:pb-10" color="primary" [checked]="false" formControlName="enf_artrosis">Artrosis</mat-checkbox>
+          <mat-checkbox class="lg:mt-3 md:mt-3 sm-pb-10" color="primary" [checked]="false" formControlName="enf_tendinitis">Tendinitis</mat-checkbox>
+        </div>
+
+
+      </div>
+      <div fxFlex="auto" fxLayout="column">
+        <h2 class="body-2 font-medium m-0 mt-6 text-secondary" fxLayout="row" fxLayoutAlign="start center">
+          <ic-icon [icon]="icDescription" class="ltr:mr-4 rtl:ml-4" fxFlex="none" size="24px"></ic-icon>
+          <span>DATOS SOCIALES</span>
+        </h2>
+        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+          <mat-form-field class="mt-6" fxFlex="auto">
+            <mat-label>Sector de vivienda</mat-label>
+            <input cdkFocusInitial formControlName="sector_vivienda" matInput>
+            <mat-icon [icIcon]="icPerson" class="mr-3" matPrefix></mat-icon>
+          </mat-form-field>
+          <mat-form-field class="mt-6" fxFlex="auto">
+            <mat-label>Etnia</mat-label>
+            <input cdkFocusInitial formControlName="etnia" matInput>
+            <mat-icon [icIcon]="icPerson" class="mr-3" matPrefix></mat-icon>
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+          <mat-form-field class="mt-6" fxFlex="auto">
+              <mat-label>Género</mat-label>
+              <mat-select formControlName="genero" required>
+                <mat-option *ngFor="let sexo of sexoList" [value]="sexo.valor">{{sexo.texto}}</mat-option>
+              </mat-select>
+              <mat-icon [icIcon]="icPerson" class="mr-3" matPrefix></mat-icon>
+          </mat-form-field>
+          <mat-form-field class="mt-6" fxFlex="auto">
+            <mat-label>Casa</mat-label>
+            <mat-select formControlName="casa" required>
+              <mat-option *ngFor="let vivienda of casaList" [value]="vivienda.valor">{{vivienda.texto}}</mat-option>
+            </mat-select>
+            <mat-icon [icIcon]="icPerson" class="mr-3" matPrefix></mat-icon>
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+          <mat-form-field class="mt-6" fxFlex="auto">
+            <mat-label>Vía de acceso</mat-label>
+            <mat-select formControlName="via_acceso" required>
+              <mat-option *ngFor="let resp of respuestaRapidaList" [value]="resp.valor">{{resp.texto}}</mat-option>
+            </mat-select> <mat-icon [icIcon]="icPerson" class="mr-3" matPrefix></mat-icon>
+          </mat-form-field>
+          <mat-form-field class="mt-6" fxFlex="auto">
+            <mat-label>Con quién vive</mat-label>
+            <input cdkFocusInitial formControlName="vive_persona" matInput>
+            <mat-icon [icIcon]="icPerson" class="mr-3" matPrefix></mat-icon>
+          </mat-form-field>
+        </div>
+        <h2 class="body-2 font-medium m-0 mt-6 text-secondary" fxLayout="row" fxLayoutAlign="start center">
+          <ic-icon [icon]="icDescription" class="ltr:mr-4 rtl:ml-4" fxFlex="none" size="24px"></ic-icon>
+          <span>Discapacidad</span>
+        </h2>
+        <div fxLayout="row"  fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+          <mat-checkbox class="lg:mt-3 md:mt-3 sm:pb-10 pb:0" color="primary" [checked]="false" formControlName="serv_internet">Auditiva</mat-checkbox>
+          <mat-checkbox class="lg:mt-3 md:mt-3 sm:pb-10  pb:0" color="primary" [checked]="false" formControlName="serv_electricidad">Física</mat-checkbox>
+          <mat-checkbox class="lg:mt-3 md:mt-3 sm:pb-10  pb:0" color="primary" [checked]="false" formControlName="serv_electricidad">Intelectual</mat-checkbox>
+          <mat-checkbox class="lg:mt-3 md:mt-3 sm:pb-10  pb:0" color="primary" [checked]="false" formControlName="serv_electricidad">Lenguaje</mat-checkbox>
+          <mat-checkbox class="lg:mt-3 md:mt-3 sm:pb-10  pb:0" color="primary" [checked]="false" formControlName="serv_electricidad">Mental</mat-checkbox>
+          <mat-checkbox class="lg:mt-3 md:mt-3 sm:pb-10  pb:0" color="primary" [checked]="false" formControlName="serv_electricidad">Visual</mat-checkbox>
+        </div>
+
+      </div>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close type="button">CANCELAR</button>
+    <button *ngIf="isCreateMode()" color="primary" mat-button type="submit">CREAR </button>
+    <button *ngIf="isUpdateMode()" color="primary" mat-button type="submit">ACTUALIZAR </button>
+  </mat-dialog-actions>
+</form>
+
+<mat-menu #settingsMenu="matMenu" xPosition="before" yPosition="below">
+  <button mat-menu-item>
+    <mat-icon [icIcon]="icPrint"></mat-icon>
+    <span>Imprimir</span>
+  </button>
+
+  <button mat-menu-item>
+    <mat-icon [icIcon]="icDownload"></mat-icon>
+    <span>Exportar</span>
+  </button>
+
+  <button mat-menu-item>
+    <mat-icon [icIcon]="icDelete"></mat-icon>
+    <span>Eliminar</span>
+  </button>
+</mat-menu>
+

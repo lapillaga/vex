@@ -1,0 +1,319 @@
+<div class="container py-gutter" *ngIf="persona">
+  <div class="card overflow-hidden">
+    <div class="h-64 relative overflow-hidden">
+      <img class="w-full object-cover" src="assets/img/demo/perfilfondo.jpg">
+      <div class="absolute bg-contrast-black opacity-25 top-0 right-0 bottom-0 left-0 w-full h-full z-0"></div>
+    </div>
+
+    <div class="z-10 relative -mt-16 px-gutter" fxLayout="row" fxLayoutAlign="start center">
+
+      <img @scaleIn
+           class="avatar h-24 w-24"
+           fxFlex="none"
+           fxFlexAlign="start"
+           fxHide.xs
+           src="assets/img/demo/perfilfondo.jpg">
+
+      <div [ngClass.gt-xs]="['ltr:ml-6 rtl:mr-6']" class="max-w-full" fxFlex="auto">
+        <div class="h-16" fxLayout="row" fxLayoutAlign="start center">
+          <h1 @fadeInRight class="headline text-contrast-white m-0" >{{persona.nombre}} {{persona.apellido}}</h1>
+
+        </div>
+        <mat-tab-group>
+          <mat-tab label="INFORMACIÓN PERSONAL">
+            <div class="mt-6"
+                 fxLayout="row"
+                 fxLayout.lt-md="column"
+                 fxLayoutAlign="start start"
+                 fxLayoutAlign.lt-md="start stretch"
+                 fxLayoutGap="24px">
+              <div fxFlex="calc(70% - 12px)" fxFlex.lt-md="auto">
+                <div class="card">
+                  <div class="px-gutter py-6" gdColumns="1fr 1fr 1fr 1fr" gdColumns.xs="1fr" gdGap="16px">
+                    <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
+                      <div @scaleIn
+                           class="w-16 h-16 rounded-full bg-primary-50 text-primary-500 ltr:mr-3 rtl:ml-3 flex items-center justify-center">
+                        <ic-icon [icon]="fingerprint" size="40px"></ic-icon>
+                      </div>
+
+                      <div @fadeInRight>
+                        <p class="m-0 body-1" >{{persona.cedula}}</p>
+                        <p class="m-0 caption text-hint">Cédula</p>
+                      </div>
+                    </div>
+
+                    <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
+                      <div @scaleIn
+                           class="w-16 h-16 rounded-full bg-primary-50 text-primary-500 ltr:mr-3 rtl:ml-3 flex items-center justify-center">
+                        <ic-icon [icon]="venus_mars" size="40px"></ic-icon>
+                      </div>
+
+                      <div @fadeInRight>
+                        <p class="m-0 body-1">{{persona.genero}}</p>
+                        <p class="m-0 caption text-hint">Género</p>
+                      </div>
+                    </div>
+
+                    <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
+                      <div @scaleIn
+                           class="w-16 h-16 rounded-full bg-primary-50 text-primary-500 ltr:mr-3 rtl:ml-3 flex items-center justify-center">
+                        <ic-icon [icon]="icgroup_work" size="40px"></ic-icon>
+                      </div>
+
+                      <div @fadeInRight>
+                        <p class="m-0 body-1">{{persona.etnia}}</p>
+                        <p class="m-0 caption text-hint">Etnia</p>
+                      </div>
+                    </div>
+
+                    <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
+                      <div @scaleIn
+                           class="w-16 h-16 rounded-full bg-primary-50 text-primary-500 ltr:mr-3 rtl:ml-3 flex items-center justify-center">
+                        <ic-icon [icon]="icNacimiento" size="40px"></ic-icon>
+                      </div>
+
+                      <div @fadeInRight>
+                        <p class="m-0 body-1">{{persona.edad}}</p>
+                        <p class="m-0 caption text-hint">Edad</p>
+                      </div>
+                    </div>
+
+                    <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
+                      <div @scaleIn
+                           class="w-16 h-16 rounded-full bg-primary-50 text-primary-500 ltr:mr-3 rtl:ml-3 flex items-center justify-center">
+                        <ic-icon [icon]="ichouse_damage" size="40px"></ic-icon>
+                      </div>
+
+                      <div @fadeInRight>
+                        <p class="m-0 body-1">{{persona.casa}}</p>
+                        <p class="m-0 caption text-hint">Casa</p>
+                      </div>
+                    </div>
+
+                    <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
+                      <div @scaleIn
+                           class="w-16 h-16 rounded-full bg-primary-50 text-primary-500 ltr:mr-3 rtl:ml-3 flex items-center justify-center">
+                        <ic-icon [icon]="icgps_fixed" size="40px"></ic-icon>
+                      </div>
+
+                      <div @fadeInRight>
+                        <p class="m-0 body-1">{{persona.sector_vivienda}}</p>
+                        <p class="m-0 caption text-hint">Sector/Comunidad</p>
+                      </div>
+                    </div>
+
+                    <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
+                      <div @scaleIn
+                           class="w-16 h-16 rounded-full bg-primary-50 text-primary-500 ltr:mr-3 rtl:ml-3 flex items-center justify-center">
+                        <ic-icon [icon]="icpeople" size="40px"></ic-icon>
+                      </div>
+
+                      <div @fadeInRight>
+                        <p class="m-0 body-1">{{persona.vive_persona}}</p>
+                        <p class="m-0 caption text-hint">Con quién vive</p>
+                      </div>
+                    </div>
+
+                    <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
+                      <div @scaleIn
+                           class="w-16 h-16 rounded-full bg-primary-50 text-primary-500 ltr:mr-3 rtl:ml-3 flex items-center justify-center">
+                        <ic-icon [icon]="icdirections_car" size="40px"></ic-icon>
+                      </div>
+
+                      <div @fadeInRight>
+                        <p class="m-0 body-1">{{persona.via_acceso}}</p>
+                        <p class="m-0 caption text-hint">Via de Acceso</p>
+                      </div>
+                    </div>
+
+                    <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
+                      <div @scaleIn
+                           class="w-16 h-16 rounded-full bg-primary-50 text-primary-500 ltr:mr-3 rtl:ml-3 flex items-center justify-center">
+                        <ic-icon [icon]="icphone" size="40px"></ic-icon>
+                      </div>
+
+                      <div @fadeInRight>
+                        <p class="m-0 body-1">{{persona.serv_telefono}}</p>
+                        <p class="m-0 caption text-hint">Teléfono Convencional</p>
+                      </div>
+                    </div>
+
+                    <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
+                      <div @scaleIn
+                           class="w-16 h-16 rounded-full bg-primary-50 text-primary-500 ltr:mr-3 rtl:ml-3 flex items-center justify-center">
+                        <ic-icon [icon]="ichighlight" size="40px"></ic-icon>
+                      </div>
+
+                      <div @fadeInRight>
+                        <p class="m-0 body-1">{{persona.serv_electricidad}}</p>
+                        <p class="m-0 caption text-hint">Servicio de electricidad</p>
+                      </div>
+                    </div>
+
+                    <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
+                      <div @scaleIn
+                           class="w-16 h-16 rounded-full bg-primary-50 text-primary-500 ltr:mr-3 rtl:ml-3 flex items-center justify-center">
+                        <ic-icon [icon]="icred" size="40px"></ic-icon>
+                      </div>
+
+                      <div @fadeInRight>
+                        <p class="m-0 body-1">{{persona.serv_internet}}</p>
+                        <p class="m-0 caption text-hint">Servicio de internet</p>
+                      </div>
+                    </div>
+
+
+
+                    <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
+                      <div @scaleIn
+                           class="w-16 h-16 rounded-full bg-primary-50 text-primary-500 ltr:mr-3 rtl:ml-3 flex items-center justify-center">
+                        <ic-icon [icon]="iccomputer" size="40px"></ic-icon>
+                      </div>
+
+                      <div @fadeInRight>
+                        <p class="m-0 body-1">{{persona.serv_computadora}}</p>
+                        <p class="m-0 caption text-hint">Computadora</p>
+                      </div>
+                    </div>
+
+                    <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
+                      <div @scaleIn
+                           class="w-16 h-16 rounded-full bg-primary-50 text-primary-500 ltr:mr-3 rtl:ml-3 flex items-center justify-center">
+                        <ic-icon [icon]="icphone_android" size="40px"></ic-icon>
+                      </div>
+
+                      <div @fadeInRight>
+                      <p class="m-0 body-1">{{persona.serv_celular}}</p>
+                           <p class="m-0 caption text-hint">Teléfono celular</p>
+                                          </div>
+                    </div>
+
+                    <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
+                      <div @scaleIn
+                           class="w-16 h-16 rounded-full bg-primary-50 text-primary-500 ltr:mr-3 rtl:ml-3 flex items-center justify-center">
+                        <ic-icon [icon]="diagnoses" size="40px"></ic-icon>
+                      </div>
+
+                             <div @fadeInRight>
+                     <p class="m-0 body-1">{{persona.enf_tendinitis}}</p>
+                      <p class="m-0 caption text-hint">Tendinitis</p>
+                       </div>
+                    </div>
+
+                    <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
+                      <div @scaleIn
+                           class="w-16 h-16 rounded-full bg-primary-50 text-primary-500 ltr:mr-3 rtl:ml-3 flex items-center justify-center">
+                        <ic-icon [icon]="diagnoses" size="40px"></ic-icon>
+                      </div>
+
+                      <div @fadeInRight>
+                        <p class="m-0 body-1">{{persona.enf_artrosis}}</p>
+                        <p class="m-0 caption text-hint">Artrosis</p>
+                      </div>
+                    </div>
+
+                    <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
+                      <div @scaleIn
+                           class="w-16 h-16 rounded-full bg-primary-50 text-primary-500 ltr:mr-3 rtl:ml-3 flex items-center justify-center">
+                        <ic-icon [icon]="diagnoses" size="40px"></ic-icon>
+                      </div>
+
+                                     <div @fadeInRight>
+                                      <p class="m-0 body-1">{{persona.enf_artritis}}</p>
+                                       <p class="m-0 caption text-hint">Artritis</p>
+                                     </div>
+                    </div>
+
+                    <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
+                      <div @scaleIn
+                           class="w-16 h-16 rounded-full bg-primary-50 text-primary-500 ltr:mr-3 rtl:ml-3 flex items-center justify-center">
+                        <ic-icon [icon]="icblind" size="40px"></ic-icon>
+                      </div>
+
+                      <div @fadeInRight>
+                        <p class="m-0 body-1">{{persona.dis_visual}}</p>
+                        <p class="m-0 caption text-hint">Discapacidad Visual</p>
+                      </div>
+                    </div>
+
+                    <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
+                      <div @scaleIn
+                           class="w-10 h-10 rounded-full bg-primary-50 text-primary-500 ltr:mr-3 rtl:ml-3 flex items-center justify-center">
+                        <ic-icon [icon]="icextension" size="20px"></ic-icon>
+                      </div>
+
+                      <div @fadeInRight>
+                        <p class="m-0 body-1">{{persona.dis_mental}}</p>
+                        <p class="m-0 caption text-hint">Discapacidad Mental</p>
+                      </div>
+                    </div>
+
+                    <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
+                      <div @scaleIn
+                           class="w-16 h-16 rounded-full bg-primary-50 text-primary-500 ltr:mr-3 rtl:ml-3 flex items-center justify-center">
+                        <ic-icon [icon]="iclenguage" size="40px"></ic-icon>
+                      </div>
+
+                      <div @fadeInRight>
+                        <p class="m-0 body-1">{{persona.dis_lenguaje}}</p>
+                        <p class="m-0 caption text-hint">Discapacidad de Lenguaje</p>
+                      </div>
+                    </div>
+                    <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
+                      <div @scaleIn
+                           class="w-16 h-16 rounded-full bg-primary-50 text-primary-500 ltr:mr-3 rtl:ml-3 flex items-center justify-center">
+                        <ic-icon [icon]="child" size="40px"></ic-icon>
+                      </div>
+
+                      <div @fadeInRight>
+                        <p class="m-0 body-1">{{persona.dis_intelectual}}</p>
+                        <p class="m-0 caption text-hint">Discapacidad intelectual</p>
+                      </div>
+                    </div>
+
+                    <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
+                      <div @scaleIn
+                           class="w-16 h-16 rounded-full bg-primary-50 text-primary-500 ltr:mr-3 rtl:ml-3 flex items-center justify-center">
+                        <ic-icon [icon]="icaccessible" size="40px"></ic-icon>
+                      </div>
+
+                      <div @fadeInRight>
+                        <p class="m-0 body-1">{{persona.dis_fisica}}</p>
+                        <p class="m-0 caption text-hint">Discapacidad física</p>
+                      </div>
+                    </div>
+
+                    <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
+                      <div @scaleIn
+                           class="w-10 h-10 rounded-full bg-primary-50 text-primary-500 ltr:mr-3 rtl:ml-3 flex items-center justify-center">
+                        <ic-icon [icon]="ichearing" size="20px"></ic-icon>
+                      </div>
+
+                      <div @fadeInRight>
+                        <p class="m-0 body-1">{{persona.dis_auditiva}}</p>
+                        <p class="m-0 caption text-hint">Discapacidad Auditiva</p>
+                      </div>
+                    </div>
+
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </mat-tab>
+          <mat-tab label="TERAPIAS">
+            <vex-grafica-pedalera></vex-grafica-pedalera>
+
+            <div class="card">
+            </div>
+
+
+          </mat-tab>
+
+        </mat-tab-group>
+      </div>
+    </div>
+  </div>
+</div>
+

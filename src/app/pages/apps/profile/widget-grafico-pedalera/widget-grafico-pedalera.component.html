@@ -1,0 +1,38 @@
+<div class="card">
+  <div class="border-b py-4 px-6" fxLayout="row" fxLayoutAlign="start center">
+    <h2 class="m-0 title" fxFlex="auto">GRÁFICA DE TERAPIAS </h2>
+
+      <form [formGroup]="myForm" >
+        <div class="mt-4" fxLayout="column" fxLayoutGap="8px">
+          <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+            <mat-form-field fxFlex="auto">
+              <mat-label>Fecha Inicio</mat-label>
+              <input formControlName="fechaInicio" matInput   [matDatepicker]="datepickerRef" ngModel >
+              <mat-datepicker-toggle [for]="datepickerRef"  matSuffix></mat-datepicker-toggle>
+              <mat-datepicker #datepickerRef></mat-datepicker>
+              <mat-hint>Haga click en el icono de la derecha</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field fxFlex="auto">
+              <mat-label>Fecha Fin</mat-label>
+              <input formControlName="fechaFin"  matInput   [min]="maxDate"  [matDatepicker]="datepickerRef1" ngModel >
+              <mat-datepicker-toggle [for]="datepickerRef1" matSuffix></mat-datepicker-toggle>
+              <mat-datepicker #datepickerRef1></mat-datepicker>
+              <mat-hint>Haga click en el icono de la derecha</mat-hint>
+            </mat-form-field>
+            <button (click)="buscar()" [disabled]="!myForm.valid" color="primary" mat-raised-button  >Buscar
+            </button>
+
+          </div>
+
+        </div>
+      </form>
+
+  </div>
+
+
+  <div class="pt-3 pb-1 pr-6">
+    <vex-chart [options]="options" [series]="series"  ></vex-chart>
+  </div>
+</div>
+
